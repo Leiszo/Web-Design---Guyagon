@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Wind Breaker</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #0B132B;
+      color: #E0E0E0;
+      line-height: 1.6;
+    }
+    /* Header */
+    .header-container {
+      background-color: #1E3A8A;
+      padding: 20px;
+      text-align: center;
+    }
+    .header-title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .nav-bar a {
+      color: #E0E0E0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    .nav-bar a:hover {
+      color: #F0A500;
+    }
+    /* Sidebar */
+    .sidebar {
+      background-color: #16213E;
+      width: 220px;
+      position: fixed;
+      top: 129.5px; /* Adjust based on header height */
+      bottom: 0;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      text-align: center;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 15px;
+    }
+    .sidebar ul li a {
+      color: #E0E0E0;
+      text-decoration: none;
+      font-size: 1rem;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .sidebar ul li a:hover {
+      background-color: #1E3A8A;
+    }
+    /* Main Content */
+    .main-content {
+      margin-left: 240px;
+      padding: 30px;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #F0A500;
+      padding-bottom: 5px;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background-color: #16213E;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .card p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        top: 0;
+        padding: 10px;
+      }
+      .main-content {
+        margin-left: 0;
+        padding: 15px;
+      }
+      .header-container {
+        padding: 15px;
+      }
+      .nav-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nav-bar a {
+        margin: 5px;
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .header-title {
+        font-size: 1.5rem;
+      }
+      .nav-bar a {
+        font-size: 0.9rem;
+        margin: 3px;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .card h3 {
+        font-size: 1.1rem;
+      }
+      .card p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header-container">
+    <div class="header-title">Wind Breaker Dashboard</div>
+    <nav class="nav-bar">
+      <a href="HOMEPAGE.html">Home</a>
+      <a href="ABOUT.html">About</a>
+      <a href="DASHBOARD1.html">Dashboard</a>
+      <a href="GALLERY.html">Gallery</a>
+      <a href="CONTACT.html">Contact</a>
+    </nav>
+  </header>
+  
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Categories</h2>
+    <ul>
+      <li><a href="#characters">CHARACTERS</a></li>
+      <li><a href="#characters">BIKES</a></li>
+      <li><a href="#characters">SKILLS</a></li>
+      <li><a href="#characters">BACKSTORY</a></li>
+      <li><a href="#characters">FANS</a></li>
+    </ul>
+  </aside>
+  
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Characters Section -->
+    <section id="characters">
+      <h2 class="section-title">Characters</h2>
+      <div class="grid-container">
+        <div class="card"><h3>Jay Jo</h3><p>Skilled and strategic rider.</p></div>
+        <div class="card"><h3>Dom Choi</h3><p>A rising star with relentless drive.</p></div>
+        <div class="card"><h3>Vinny Hong</h3><p>Known for his speed and precision.</p></div>
+        <div class="card"><h3>Owen Knight</h3><p>An elite cyclist with unmatched flair.</p></div>
+        <div class="card"><h3>Minu Yoon</h3><p>Determined and tactical competitor.</p></div>
+        <div class="card"><h3>Shelly</h3><p>Resourceful and essential team member.</p></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

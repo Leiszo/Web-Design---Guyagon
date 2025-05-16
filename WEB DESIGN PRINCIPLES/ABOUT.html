@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Wind Breaker</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #0B132B;
+      color: #E0E0E0;
+    }
+    
+    /* Header styling */
+    header {
+      background: #1E3A8A;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    header h1 {
+      margin: 0 0 0.5rem 0;
+    }
+    
+    header p {
+      margin: 0;
+    }
+    
+    /* Navigation styling */
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #142850;
+      padding: 15px;
+    }
+    
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #E0E0E0;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    nav a:hover, nav a.active {
+      color: #F0A500;
+    }
+    
+    /* Main content area */
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    /* Sidebar styling */
+    .sidebar-links {
+      flex: 1;
+      min-width: 250px;
+      background: #142850;
+      border-radius: 15px;
+      padding: 15px;
+      position: relative;
+    }
+    
+    /* Decorative element */
+    .sidebar-links::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 30px;
+      height: 30px;
+      background-color: #F0A500;
+      border-radius: 50%;
+    }
+    
+    .sidebar-links h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #F0A500;
+      padding-bottom: 5px;
+    }
+    
+    .sidebar-links ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    
+    .sidebar-links li {
+      margin-bottom: 8px;
+    }
+    
+    .sidebar-links a {
+      text-decoration: none;
+      color: #E0E0E0;
+      padding: 5px;
+      display: block;
+      transition: color 0.3s ease;
+    }
+    
+    .sidebar-links a:hover {
+      color: #F0A500;
+      text-decoration: underline;
+    }
+    
+    .sidebar-links a.active {
+      color: #F0A500;
+      font-weight: bold;
+    }
+    
+    /* Content section styling */
+    .content {
+      flex: 2;
+      background: #16213E;
+      border-radius: 15px;
+      padding: 20px;
+    }
+    
+    .content h2 {
+      border-bottom: 2px solid #F0A500;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    
+    /* About section styling */
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+    }
+    
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(240, 165, 0, 0.3);
+    }
+    
+    .about-text {
+      flex: 2;
+      min-width: 300px;
+    }
+    
+    .about-title {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+      color: white;
+    }
+    
+    .about-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #F0A500;
+    }
+    
+    .about-description {
+      margin-bottom: 25px;
+      line-height: 1.8;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: #F0A500;
+      color: #0B132B;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      background-color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(240, 165, 0, 0.4);
+    }
+    
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1E3A8A;
+      color: white;
+      margin-top: 20px;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      nav a {
+        margin: 10px 0;
+        text-align: center;
+      }
+      
+      main {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      .sidebar-links, .content {
+        width: 100%;
+      }
+      
+      .about-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get current page filename
+      const currentPage = window.location.pathname.split('/').pop();
+      
+      // Set active state in main navigation
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage || 
+            (currentPage === '' && linkHref === '#') ||
+            (currentPage === 'about.html' && linkHref === 'ABOUT.html')) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Add click event listeners to sidebar links
+      const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // Remove active class from all sidebar links
+          sidebarLinks.forEach(l => l.classList.remove('active'));
+          // Add active class to clicked link
+          this.classList.add('active');
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Wind Breaker</h1>
+    <p>Your ultimate destination for cycling adventures</p>
+  </header>
+  
+  <nav>
+    <a href="HOMEPAGE.html">Home</a>
+    <a href="#">About</a>
+    <a href="DASHBOARD1.html">Dashboard</a>
+    <a href="GALLERY.html">Gallery</a>
+    <a href="CONTACT.html">Contact</a>
+  </nav>
+  
+  <main>
+    <div class="sidebar-links">
+      <h2>Windbreaker Webtoon</h2>
+      <ul>
+        <li><a href="chapter1.html">Chapter 1: The Wind's Call</a></li>
+        <li><a href="chapter2.html">Chapter 2: A New Beginning</a></li>
+        <li><a href="chapter3.html">Chapter 3: Into the Storm</a></li>
+        <li><a href="chapter4.html">Chapter 4: The Race Against Time</a></li>
+      </ul> 
+    </div>
+    
+    <div class="content">
+      <section>
+        <h2>About Us</h2>
+        <div class="about-container">
+          <div class="about-image">
+            <img src="img\owen.jpg" alt="Owen Knight - Lead Cycling Instructor" style="object-fit: cover; height: 500px;">
+          </div>
+          <div class="about-text">
+            <h1 class="about-title">About Us</h1>
+            <h3 class="about-subtitle">Cyclist & Designer</h3>
+            <p class="about-description">I am a professional cyclist and cycling coach with a passion for web design. I provide expert training programs and cutting-edge cycling techniques to help you break through your limits. My approach combines traditional cycling wisdom with modern performance analytics to create a riding experience that's both exhilarating and technically sound.</p>
+            <p class="about-description">At Wind Breaker, we believe cycling is more than just a sport—it's a lifestyle. Our responsive training programs are accessible to all riders, regardless of their experience level. From mountain trails to urban commutes, we'll help you master the wind and find freedom on two wheels.</p>
+            <a href="CONTACT.html" class="cta-button">Let's Ride</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Wind Breaker. All rights reserved.</p>
+  </footer>
+</body>
+</html>

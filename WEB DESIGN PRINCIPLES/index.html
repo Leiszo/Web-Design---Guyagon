@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owen Knight - Profile</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            alert("Welcome to my website!");
+        });
+    </script>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #0B132B;
+            color: #E0E0E0;
+        }
+        header {
+            background: #1E3A8A;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #142850;
+            padding: 15px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #E0E0E0;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover, nav a.active {
+            color: #F0A500;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section, aside {
+            background: #16213E;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        section {
+            width: 60%;
+        }
+        aside {
+            width: 30%;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1E3A8A;
+            color: white;
+        }
+        
+        /* Custom styling for profile image */
+        .profile-image {
+            display: block;
+            max-width: 300px;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(240, 165, 0, 0.3);
+        }
+        
+        h2 {
+            border-bottom: 2px solid #F0A500;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        article {
+            margin-bottom: 25px;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+            main {
+                flex-direction: column;
+                padding: 10px;
+            }
+            section, aside {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Owen Knight</h1>
+        <p>Elite Cyclist | Leader of the Light Cavalry Crew | Wind Knight</p>
+    </header>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" class="active">Home</a>
+        <a href="ABOUT.html">About</a>
+        <a href="DASHBOARD1.html">Dashboard</a>
+        <a href="GALLERY.html">Gallery</a>
+        <a href="CONTACT.html">Contact</a>
+    </nav>
+    <!-- Main Content -->
+    <main>
+        <!-- Main Content Section -->
+        <section>
+            <img src="img/windbreaker-character.jpg" alt="Owen Knight - Wind Knight" class="profile-image">
+            <h2>Racing Achievements</h2>
+            <article>
+                <h3>Creator of the Light Cavalry</h3>
+                <p>One of the top cyclists in the elite racing group known for his precision and speed. The Light Cavalry is renowned for its innovative racing strategies and dominance in team competitions.</p>
+            </article>
+            <article>
+                <h3>Time Trial Specialist</h3>
+                <p>Renowned for his high-speed sprints that leave competitors in the dust. Owen's record-breaking times in city circuits have established him as one of the most formidable racers in the Wind Breaker universe.</p>
+            </article>
+        </section>
+        <!-- Sidebar Section -->
+        <aside>
+            <h2>About Owen</h2>
+            <p>Owen Knight is a skilled and determined cyclist from <em>Wind Breaker</em>, known for his aggressive riding style and competitive nature. His leadership has inspired countless riders to push beyond their limits.</p>
+            <h3>Key Strengths</h3>
+            <ul>
+                <li>Explosive Sprinting</li>
+                <li>Unmatched Endurance</li>
+                <li>Tactical Racing Strategies</li>
+                <li>Team Leadership</li>
+            </ul>
+        </aside>
+    </main>
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Owen Knight Fan Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Wind Breaker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #0B132B;
+      color: #E0E0E0;
+    }
+    
+    header {
+      background: #1E3A8A;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #142850;
+      padding: 15px;
+    }
+    
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #E0E0E0;
+      font-weight: bold;
+    }
+    
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+      background: #16213E;
+      border-radius: 15px;
+    }
+    
+    .section-title {
+      border-bottom: 2px solid #F0A500;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      color: #F0A500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .section-title h2 {
+      margin: 0;
+    }
+    
+    .section-title .dots {
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 10px;
+      position: relative;
+      aspect-ratio: 16/9;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+    
+    .gallery-item img, 
+    .gallery-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+    
+    .gallery-item-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(11, 19, 43, 0.7);
+      color: #E0E0E0;
+      padding: 8px;
+      text-align: center;
+      font-size: 14px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1E3A8A;
+      color: white;
+      margin-top: 20px;
+    }
+    
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 1200px;
+      max-height: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      z-index: 101;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #F0A500;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      nav {
+        flex-direction: column;
+        padding: 10px;
+      }
+      nav a {
+        margin: 5px 0;
+      }
+      main {
+        padding: 15px;
+        margin: 15px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      header p {
+        font-size: 0.9rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+      }
+      main {
+        padding: 10px;
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wind Breaker</h1>
+    <p>Your ultimate destination for cycling adventures</p>
+  </header>
+  
+  <nav>
+    <a href="HOMEPAGE.html">Home</a>
+    <a href="ABOUT.html">About</a>
+    <a href="DASHBOARD1.html">Dashboard</a>
+    <a href="#">Gallery</a>
+    <a href="CONTACT.html">Contact</a>
+  </nav>
+  
+  <main>
+    <div class="section-title">
+      <h2>4x4 Gallery – 4 Photos & 4 Videos</h2>
+      <div class="dots">•••</div>
+    </div>
+    
+    <div class="gallery-grid">
+      <!-- Photos -->
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3ljbGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Mountain Biking Trail">
+        <div class="gallery-item-caption">Epic Mountain Descent</div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y3ljbGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Coastal Cycling Route">
+        <div class="gallery-item-caption">Coastal Breeze Ride</div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3ljbGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Forest Cycling Path">
+        <div class="gallery-item-caption">Forest Pathway Adventure</div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1534787238916-9ba6764efd4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGN5Y2xpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Urban Cycling">
+        <div class="gallery-item-caption">Urban Cycling Challenge</div>
+      </div>
+      
+      <!-- Videos -->
+      <div class="gallery-item">
+        <video poster="https://i.ytimg.com/vi/4Yl5C9dZteA/maxresdefault.jpg">
+          <source src="https://player.vimeo.com/external/325743640.hd.mp4?s=4ac7fe6364e2caa43399eef33dbd0f4ae96ac97b&profile_id=174" type="video/mp4">
+        </video>
+        <div class="play-button">▶</div>
+        <div class="gallery-item-caption">Speed Training Tips</div>
+      </div>
+      
+      <div class="gallery-item">
+        <video poster="https://i.ytimg.com/vi/eVrpCMFsF9o/maxresdefault.jpg">
+          <source src="https://player.vimeo.com/external/305250673.hd.mp4?s=7a1e0bf462fca1b3da1f02268d8c51f16cf714ab&profile_id=172" type="video/mp4">
+        </video>
+        <div class="play-button">▶</div>
+        <div class="gallery-item-caption">Essential Bike Maintenance</div>
+      </div>
+      
+      <div class="gallery-item">
+        <video poster="https://i.ytimg.com/vi/xCzfZXCm78E/maxresdefault.jpg">
+          <source src="https://player.vimeo.com/external/370845105.hd.mp4?s=b477c4627064df85fe09ed1d1af7d77caccfb5f5&profile_id=172" type="video/mp4">
+        </video>
+        <div class="play-button">▶</div>
+        <div class="gallery-item-caption">Wind Breaker Team Competition</div>
+      </div>
+      
+      <div class="gallery-item">
+        <video poster="https://i.ytimg.com/vi/bSUp9wm8anQ/maxresdefault.jpg">
+          <source src="https://player.vimeo.com/external/363625327.hd.mp4?s=a837542208a77c24591e87df5e23dcea791d7830&profile_id=172" type="video/mp4">
+        </video>
+        <div class="play-button">▶</div>
+        <div class="gallery-item-caption">Advanced Cycling Techniques</div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Wind Breaker. All rights reserved.</p>
+  </footer>
+  
+  <!-- Modal for enlarged view -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <video class="modal-content" id="modalVideo" controls></video>
+  </div>
+  
+  <script>
+    // Modal functionality
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalVideo = document.getElementById('modalVideo');
+    const closeBtn = document.getElementsByClassName('close')[0];
+    
+    // Get all gallery items
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+      item.addEventListener('click', function() {
+        modal.style.display = "block";
+        
+        // Check if it's a video (has play button)
+        const isVideo = this.querySelector('.play-button') !== null;
+        
+        if (isVideo) {
+          modalImg.style.display = "none";
+          modalVideo.style.display = "block";
+          const videoSrc = this.querySelector('video source').src;
+          modalVideo.src = videoSrc;
+          modalVideo.play();
+        } else {
+          modalVideo.style.display = "none";
+          modalImg.style.display = "block";
+          modalImg.src = this.querySelector('img').src;
+        }
+      });
+    });
+    
+    // Close modal
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = "none";
+      modalVideo.pause();
+    });
+    
+    // Also close when clicking outside the image
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+        modalVideo.pause();
+      }
+    });
+    
+    // Initialize videos with play button functionality
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      const playButton = item.querySelector('.play-button');
+      if (playButton) {
+        playButton.addEventListener('click', function(e) {
+          e.stopPropagation(); // Prevent triggering the modal
+          const video = item.querySelector('video');
+          if (video.paused) {
+            video.play();
+            playButton.style.display = 'none';
+          } else {
+            video.pause();
+            playButton.style.display = 'flex';
+          }
+        });
+        
+        const video = item.querySelector('video');
+        video.addEventListener('ended', function() {
+          playButton.style.display = 'flex';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
